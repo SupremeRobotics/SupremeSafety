@@ -1,2 +1,2 @@
 # Supreme Safety Android App
-Built using Android Studio.
+Download: https://rebrand.ly/supreme
