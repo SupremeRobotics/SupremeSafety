@@ -13,15 +13,23 @@ public class Quiz extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     public int qNum = 1;
     public int score = 0;
-    char[] answers = {'a', 'a', 'c', 'd', 'b', 'a', 'a', 'd', 'c', 'c'};
-    String [] optionsA = {"ayyye1", "ayyye2", "ayyye3", "ayyye4", "ayyye5",
-            "ayyye11", "ayyye12", "ayyye13", "ayyye14", "ayyye15"};
-    String [] optionsB = {"boooo1", "boooo2", "boooo3", "boooo4", "boooo5",
-            "boooo11", "boooo12", "boooo13", "boooo14", "boooo15"};
-    String [] optionsC = {"coool1", "coool2", "coool3", "coool4", "coool5",
-            "coool11", "coool12", "coool13", "coool14", "coool15"};
-    String [] optionsD = {"dopeyq", "dopeyw", "dopeye", "dopeyr", "dopeyt",
-            "dopeya", "dopeys", "dopeyd", "dopeyf", "dopeyg"};
+    char[] answers = {'a', 'd', 'd', 'd', 'a', 'b', 'd', 'b', 'a', 'c'};
+    String [] optionsA = {"Vent out the air into the atmosphere", "Feet planted, back straight, lifting with arm power, and keeping close to the robot.",
+            "Yellow", "Safety Bucket", "Check to make sure that all articles on the robot are secure.",
+            "Relieve all stored energy and open the main circuit braker on the robot", "Granola bars", "2 People",
+            "Remove it from service, and inform the safety captain and mentor", "Mithil Kumar"};
+    String [] optionsB = {"Leave the air compressed inside", "Start with a curved back, and slowly straighten out lifting the robot, while attempting to jump.",
+            "Amber", "Plastic Bag", "Check to make sure that the robot is on.",
+            "Coming out to the field with purple lights", "Tinfoil wrapped food", "1 Person",
+            "Inform the UL safety advisor", "Vedant Shah"};
+    String [] optionsC = {"Poke a hole into a pneumatics tubing to release air", "Feet planted, back curved, lifting with leg power, and keeping close to the robot.",
+            "Blue", "Metallic, leak-proof container.", "Check to make sure that the wheels are not scuffed up.",
+            "Remove debris from the playing field", "Closed container food", "5 People",
+            "Remove it from service, do NOT inform anyone", "Eknoor Singh"};
+    String [] optionsD = {"None of the above", "Feet planted, back straight, lifting with leg power, and keeping close to the robot.",
+            "Purple", "Non-metallic, leak-proof container.", "Make sure that the robot's laces are tied.",
+            "Use the \"Pre-Lift\", and \"During the Lift\" procedures", "None of the above", "7 People",
+            "Inform the mentor", "Allan Thoms"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +41,7 @@ public class Quiz extends AppCompatActivity {
         score = 0;
         qNumberComp.setText(qNum + "/10");
         TextView qNumber = (TextView) findViewById(R.id.textView3);
-        qNumber.setText("Question" + qNum);
+        qNumber.setText("Question " + qNum);
         ImageView disQuestion = (ImageView) findViewById(R.id.imageView);
         disQuestion.setImageResource(R.drawable.q1);
 
@@ -91,7 +99,7 @@ public class Quiz extends AppCompatActivity {
         TextView qNumberComp = (TextView) findViewById(R.id.textView);
         qNumberComp.setText(qNum + "/10");
         TextView qNumber = (TextView) findViewById(R.id.textView3);
-        qNumber.setText("Question" + qNum);
+        qNumber.setText("Question " + qNum);
         Button buttonA = (Button) findViewById(R.id.button22);
         Button buttonB = (Button) findViewById(R.id.button21);
         Button buttonC = (Button) findViewById(R.id.button20);

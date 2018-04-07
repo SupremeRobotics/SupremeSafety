@@ -16,6 +16,13 @@ public class Results extends Quiz {
         int score = intent.getIntExtra(Quiz.EXTRA_MESSAGE, 0);
         TextView qNumber = (TextView) findViewById(R.id.textView8);
         qNumber.setText(score + "/10");
+        TextView isPerfect = (TextView) findViewById(R.id.textView7);
+        if (score == 10){
+            isPerfect.setText("Perfect!");
+        }
+        else{
+            isPerfect.setText("Not Perfect?");
+        }
     }
 
     @Override
