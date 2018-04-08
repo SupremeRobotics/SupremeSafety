@@ -2,6 +2,15 @@
     font-family: "Futura-Bold";
     src: url("assets/Futura.ttf")
 }
+a:link, a:visited, a:hover, a:active {
+    color: #FFFFFF; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+}
 body {
 	background-color: #ED1B24;
 }
@@ -20,7 +29,8 @@ body {
 	width: 75%;
 	display: block;
 	text-transform: uppercase;
-	border: 0;
+	border: 5;
+	border-color: #ED1B24;
     background: #FFFFFF;
     padding: 15px;
     color: #ED1B24;
