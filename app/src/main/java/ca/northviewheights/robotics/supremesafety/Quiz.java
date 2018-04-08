@@ -1,6 +1,7 @@
 package ca.northviewheights.robotics.supremesafety;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,6 +48,18 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Futura.ttf");
+        TextView textView3 = (TextView) findViewById(R.id.textView3);
+        textView3.setTypeface(typeface);
+        Button buttonG = (Button) findViewById(R.id.button5);
+        buttonG.setTypeface(typeface);
+        Button buttonH = (Button) findViewById(R.id.button20);
+        buttonH.setTypeface(typeface);
+        Button buttonI = (Button) findViewById(R.id.button21);
+        buttonI.setTypeface(typeface);
+        Button buttonJ = (Button) findViewById(R.id.button22);
+        buttonJ.setTypeface(typeface);
 
         for (int i = 0; i < 10; i++){
             order.add(i);
@@ -153,6 +166,19 @@ public class Quiz extends AppCompatActivity {
         buttonB.setText(b);
         buttonC.setText(c);
         buttonD.setText(d);
+
+        if (whichOne == 1){
+            buttonA.setTextSize(12);
+            buttonB.setTextSize(12);
+            buttonC.setTextSize(12);
+            buttonD.setTextSize(12);
+        }
+        else{
+            buttonA.setTextSize(14);
+            buttonB.setTextSize(14);
+            buttonC.setTextSize(14);
+            buttonD.setTextSize(14);
+        }
     }
 
     public void drawImage(int whichOne2){
