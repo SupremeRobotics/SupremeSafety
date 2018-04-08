@@ -1,2 +1,3 @@
 # Supreme Safety App
-Download: [https://rebrand.ly/supreme](https://rebrand.ly/supreme)
+## Download:
+[https://rebrand.ly/supreme](https://rebrand.ly/supreme)
