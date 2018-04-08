@@ -21,7 +21,7 @@ public class Quiz extends AppCompatActivity {
             "Purple", "Non-metallic, leak-proof container.", "Check to make sure that all articles on the robot are secure.",
             "Coming out to the field with purple lights", "None of the above", "1 Person",
             "Remove it from service, and inform the safety captain and mentor", "Eknoor Singh"};
-    
+
     public String [] optionsA = {"Vent out the air into the atmosphere", "Feet planted, back straight, lifting with arm power, and keeping close to the robot.",
             "Yellow", "Safety Bucket", "Check to make sure that all articles on the robot are secure.",
             "Relieve all stored energy and open the main circuit braker on the robot", "Granola bars", "2 People",
@@ -38,8 +38,10 @@ public class Quiz extends AppCompatActivity {
             "Purple", "Non-metallic, leak-proof container.", "Make sure that the robot's laces are tied.",
             "Use the \"Pre-Lift\", and \"During the Lift\" procedures", "None of the above", "7 People",
             "Inform the mentor", "Allan Thoms"};
+    public String [][] options = {optionsA, optionsB, optionsC, optionsD};
 
     ArrayList<Integer> order = new ArrayList<Integer>();
+    ArrayList<Integer> optOrder = new ArrayList<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class Quiz extends AppCompatActivity {
         for (int i = 0; i < 10; i++){
             order.add(i);
         }
+        for (int i = 0; i < 4; i++){
+            optOrder.add(i);
+        }
+        Collections.shuffle(optOrder);
         Collections.shuffle(order);
         whichOne = order.get(0);
 
@@ -64,14 +70,19 @@ public class Quiz extends AppCompatActivity {
         Button buttonB = (Button) findViewById(R.id.button21);
         Button buttonC = (Button) findViewById(R.id.button20);
         Button buttonD = (Button) findViewById(R.id.button5);
-        buttonA.setText(optionsA[whichOne]);
-        buttonB.setText(optionsB[whichOne]);
-        buttonC.setText(optionsC[whichOne]);
-        buttonD.setText(optionsD[whichOne]);
+        String a = options[optOrder.get(0)][whichOne];
+        String b = options[optOrder.get(1)][whichOne];
+        String c = options[optOrder.get(2)][whichOne];
+        String d = options[optOrder.get(3)][whichOne];
+        buttonA.setText(a);
+        buttonB.setText(b);
+        buttonC.setText(c);
+        buttonD.setText(d);
     }
 
     public void goToActivity1 (View view){
-        if ('a' == answers[whichOne]){
+        String temp = options[optOrder.get(0)][whichOne];
+        if (temp.equals(answers2[whichOne])){
             score++;
         }
         qNum++;
@@ -81,7 +92,8 @@ public class Quiz extends AppCompatActivity {
     }
 
     public void goToActivity2 (View view){
-        if ('b' == answers[whichOne]){
+        String temp = options[optOrder.get(1)][whichOne];
+        if (temp.equals(answers2[whichOne])){
             score++;
         }
         qNum++;
@@ -91,7 +103,8 @@ public class Quiz extends AppCompatActivity {
     }
 
     public void goToActivity3 (View view){
-        if ('c' == answers[whichOne]){
+        String temp = options[optOrder.get(2)][whichOne];
+        if (temp.equals(answers2[whichOne])){
             score++;
         }
         qNum++;
@@ -101,7 +114,8 @@ public class Quiz extends AppCompatActivity {
     }
 
     public void goToActivity4 (View view){
-        if ('d' == answers[whichOne]){
+        String temp = options[optOrder.get(3)][whichOne];
+        if (temp.equals(answers2[whichOne])){
             score++;
         }
         qNum++;
@@ -125,14 +139,20 @@ public class Quiz extends AppCompatActivity {
         qNumberComp.setText(qNum + "/10");
         TextView qNumber = (TextView) findViewById(R.id.textView3);
         qNumber.setText("Question " + qNum);
+
+        Collections.shuffle(optOrder);
         Button buttonA = (Button) findViewById(R.id.button22);
         Button buttonB = (Button) findViewById(R.id.button21);
         Button buttonC = (Button) findViewById(R.id.button20);
         Button buttonD = (Button) findViewById(R.id.button5);
-        buttonA.setText(optionsA[whichOne]);
-        buttonB.setText(optionsB[whichOne]);
-        buttonC.setText(optionsC[whichOne]);
-        buttonD.setText(optionsD[whichOne]);
+        String a = options[optOrder.get(0)][whichOne];
+        String b = options[optOrder.get(1)][whichOne];
+        String c = options[optOrder.get(2)][whichOne];
+        String d = options[optOrder.get(3)][whichOne];
+        buttonA.setText(a);
+        buttonB.setText(b);
+        buttonC.setText(c);
+        buttonD.setText(d);
     }
 
     public void drawImage(int whichOne2){
