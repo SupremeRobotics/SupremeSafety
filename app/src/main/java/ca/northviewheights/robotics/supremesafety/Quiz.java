@@ -8,33 +8,44 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.*;
+
 public class Quiz extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     public int qNum = 1;
+    public int whichOne;
     public int score = 0;
     char[] answers = {'a', 'd', 'd', 'd', 'a', 'b', 'd', 'b', 'a', 'c'};
-    String [] optionsA = {"Vent out the air into the atmosphere", "Feet planted, back straight, lifting with arm power, and keeping close to the robot.",
+    public String [] optionsA = {"Vent out the air into the atmosphere", "Feet planted, back straight, lifting with arm power, and keeping close to the robot.",
             "Yellow", "Safety Bucket", "Check to make sure that all articles on the robot are secure.",
             "Relieve all stored energy and open the main circuit braker on the robot", "Granola bars", "2 People",
             "Remove it from service, and inform the safety captain and mentor", "Mithil Kumar"};
-    String [] optionsB = {"Leave the air compressed inside", "Start with a curved back, and slowly straighten out lifting the robot, while attempting to jump.",
+    public String [] optionsB = {"Leave the air compressed inside", "Start with a curved back, and slowly straighten out lifting the robot, while attempting to jump.",
             "Amber", "Plastic Bag", "Check to make sure that the robot is on.",
             "Coming out to the field with purple lights", "Tinfoil wrapped food", "1 Person",
             "Inform the UL safety advisor", "Vedant Shah"};
-    String [] optionsC = {"Poke a hole into a pneumatics tubing to release air", "Feet planted, back curved, lifting with leg power, and keeping close to the robot.",
+    public String [] optionsC = {"Poke a hole into a pneumatics tubing to release air", "Feet planted, back curved, lifting with leg power, and keeping close to the robot.",
             "Blue", "Metallic, leak-proof container.", "Check to make sure that the wheels are not scuffed up.",
             "Remove debris from the playing field", "Closed container food", "5 People",
             "Remove it from service, do NOT inform anyone", "Eknoor Singh"};
-    String [] optionsD = {"None of the above", "Feet planted, back straight, lifting with leg power, and keeping close to the robot.",
+    public String [] optionsD = {"None of the above", "Feet planted, back straight, lifting with leg power, and keeping close to the robot.",
             "Purple", "Non-metallic, leak-proof container.", "Make sure that the robot's laces are tied.",
             "Use the \"Pre-Lift\", and \"During the Lift\" procedures", "None of the above", "7 People",
             "Inform the mentor", "Allan Thoms"};
+
+    ArrayList<Integer> order = new ArrayList<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        for (int i = 0; i < 10; i++){
+            order.add(i);
+        }
+        Collections.shuffle(order);
+        whichOne = order.get(0);
 
         TextView qNumberComp = (TextView) findViewById(R.id.textView);
         qNum = 1;
@@ -42,48 +53,55 @@ public class Quiz extends AppCompatActivity {
         qNumberComp.setText(qNum + "/10");
         TextView qNumber = (TextView) findViewById(R.id.textView3);
         qNumber.setText("Question " + qNum);
-        ImageView disQuestion = (ImageView) findViewById(R.id.imageView);
-        disQuestion.setImageResource(R.drawable.q1);
+        drawImage(whichOne+1);
 
         Button buttonA = (Button) findViewById(R.id.button22);
         Button buttonB = (Button) findViewById(R.id.button21);
         Button buttonC = (Button) findViewById(R.id.button20);
         Button buttonD = (Button) findViewById(R.id.button5);
-        buttonA.setText(optionsA[qNum-1]);
-        buttonB.setText(optionsB[qNum-1]);
-        buttonC.setText(optionsC[qNum-1]);
-        buttonD.setText(optionsD[qNum-1]);
+        buttonA.setText(optionsA[whichOne]);
+        buttonB.setText(optionsB[whichOne]);
+        buttonC.setText(optionsC[whichOne]);
+        buttonD.setText(optionsD[whichOne]);
     }
 
     public void goToActivity1 (View view){
-        if ('a' == answers[qNum-1]){
+        if ('a' == answers[whichOne]){
             score++;
         }
         qNum++;
+        if (qNum < 11)
+            whichOne = order.get(qNum-1);
         updateStuff();
     }
 
     public void goToActivity2 (View view){
-        if ('b' == answers[qNum-1]){
+        if ('b' == answers[whichOne]){
             score++;
         }
         qNum++;
+        if (qNum < 11)
+            whichOne = order.get(qNum-1);
         updateStuff();
     }
 
     public void goToActivity3 (View view){
-        if ('c' == answers[qNum-1]){
+        if ('c' == answers[whichOne]){
             score++;
         }
         qNum++;
+        if (qNum < 11)
+            whichOne = order.get(qNum-1);
         updateStuff();
     }
 
     public void goToActivity4 (View view){
-        if ('d' == answers[qNum-1]){
+        if ('d' == answers[whichOne]){
             score++;
         }
         qNum++;
+        if (qNum < 11)
+            whichOne = order.get(qNum-1);
         updateStuff();
     }
 
@@ -94,8 +112,10 @@ public class Quiz extends AppCompatActivity {
             startActivity(intent);
             qNum = 1;
             score = 0;
+            Collections.shuffle(order);
+            whichOne = order.get(0);
         }
-        drawImage();
+        drawImage(whichOne+1);
         TextView qNumberComp = (TextView) findViewById(R.id.textView);
         qNumberComp.setText(qNum + "/10");
         TextView qNumber = (TextView) findViewById(R.id.textView3);
@@ -104,42 +124,42 @@ public class Quiz extends AppCompatActivity {
         Button buttonB = (Button) findViewById(R.id.button21);
         Button buttonC = (Button) findViewById(R.id.button20);
         Button buttonD = (Button) findViewById(R.id.button5);
-        buttonA.setText(optionsA[qNum-1]);
-        buttonB.setText(optionsB[qNum-1]);
-        buttonC.setText(optionsC[qNum-1]);
-        buttonD.setText(optionsD[qNum-1]);
+        buttonA.setText(optionsA[whichOne]);
+        buttonB.setText(optionsB[whichOne]);
+        buttonC.setText(optionsC[whichOne]);
+        buttonD.setText(optionsD[whichOne]);
     }
 
-    public void drawImage(){
+    public void drawImage(int whichOne2){
         ImageView disQuestion = (ImageView) findViewById(R.id.imageView);
-        if (qNum == 1){
+        if (whichOne2 == 1){
             disQuestion.setImageResource(R.drawable.q1);
         }
-        else if (qNum == 2){
+        else if (whichOne2 == 2){
             disQuestion.setImageResource(R.drawable.q2);
         }
-        else if (qNum == 3){
+        else if (whichOne2 == 3){
             disQuestion.setImageResource(R.drawable.q3);
         }
-        else if (qNum == 4){
+        else if (whichOne2 == 4){
             disQuestion.setImageResource(R.drawable.q4);
         }
-        else if (qNum == 5){
+        else if (whichOne2 == 5){
             disQuestion.setImageResource(R.drawable.q5);
         }
-        else if (qNum == 6){
+        else if (whichOne2 == 6){
             disQuestion.setImageResource(R.drawable.q6);
         }
-        else if (qNum == 7){
+        else if (whichOne2 == 7){
             disQuestion.setImageResource(R.drawable.q7);
         }
-        else if (qNum == 8){
+        else if (whichOne2 == 8){
             disQuestion.setImageResource(R.drawable.q8);
         }
-        else if (qNum == 9){
+        else if (whichOne2 == 9){
             disQuestion.setImageResource(R.drawable.q9);
         }
-        else if (qNum == 10){
+        else if (whichOne2 == 10){
             disQuestion.setImageResource(R.drawable.q10);
         }
     }
