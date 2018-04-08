@@ -42,7 +42,7 @@ body {
 .left {
 	font-family: "Futura-Bold", sans-serif;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 10px;
 	display: block;
     float:left;
 	color: #FFFFFF;
@@ -54,7 +54,7 @@ body {
 	width: 20%;
 	font-family: "Futura-Bold", sans-serif;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 10px;
 	display: block;
     float:right;
 	color: #FFFFFF;
