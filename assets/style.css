@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "Futura-Bold";
+    src: url("assets/Futura.ttf")
+}
 body {
 	background-color: #ED1B24;
 }
@@ -18,12 +22,15 @@ body {
 	text-transform: uppercase;
 	border: 0;
     background: #FFFFFF;
-    padding: 20px;
+    padding: 15px;
     color: #ED1B24;
-    font-size: 16px;
+	font-family: "Futura-Bold", sans-serif;
+    font-size: 18px;
 	font-weight: bold;
+	font-style: italic;
 }
 .left {
+	font-family: "Futura-Bold", sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	display: block;
@@ -35,6 +42,7 @@ body {
 	margin-left: auto;
     margin-right: auto;
 	width: 20%;
+	font-family: "Futura-Bold", sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	display: block;
