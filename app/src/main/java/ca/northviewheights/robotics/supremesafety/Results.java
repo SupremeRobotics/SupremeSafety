@@ -12,7 +12,7 @@ public class Results extends Quiz {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_results);
+        setContentView(R.layout.activity_results);   
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Futura.ttf");
         TextView textView6 = (TextView) findViewById(R.id.textView6);
