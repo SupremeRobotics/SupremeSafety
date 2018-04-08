@@ -17,6 +17,11 @@ public class Quiz extends AppCompatActivity {
     public int whichOne;
     public int score = 0;
     char[] answers = {'a', 'd', 'd', 'd', 'a', 'b', 'd', 'b', 'a', 'c'};
+    String [] answers2 = {"Vent out the air into the atmosphere", "Feet planted, back straight, lifting with leg power, and keeping close to the robot.",
+            "Purple", "Non-metallic, leak-proof container.", "Check to make sure that all articles on the robot are secure.",
+            "Coming out to the field with purple lights", "None of the above", "1 Person",
+            "Remove it from service, and inform the safety captain and mentor", "Eknoor Singh"};
+    
     public String [] optionsA = {"Vent out the air into the atmosphere", "Feet planted, back straight, lifting with arm power, and keeping close to the robot.",
             "Yellow", "Safety Bucket", "Check to make sure that all articles on the robot are secure.",
             "Relieve all stored energy and open the main circuit braker on the robot", "Granola bars", "2 People",
