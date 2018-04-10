@@ -67,9 +67,16 @@ public class Quiz extends AppCompatActivity {
         for (int i = 0; i < 4; i++){
             optOrder.add(i);
         }
-        Collections.shuffle(optOrder);
         Collections.shuffle(order);
         whichOne = order.get(0);
+        if (whichOne == 0 || whichOne == 6){
+            optOrder.remove(3);
+            Collections.shuffle(optOrder);
+            optOrder.add(3);
+        }
+        else{
+            Collections.shuffle(optOrder);
+        }
 
         TextView qNumberComp = (TextView) findViewById(R.id.textView);
         qNum = 1;
@@ -153,7 +160,19 @@ public class Quiz extends AppCompatActivity {
         TextView qNumber = (TextView) findViewById(R.id.textView3);
         qNumber.setText("Question " + qNum);
 
-        Collections.shuffle(optOrder);
+        if (whichOne == 0 || whichOne == 6){
+            for (int i = 0; i < 4; i++){
+                if (optOrder.get(i) == 3){
+                    optOrder.remove(i);
+                    break;
+                }
+            }
+            Collections.shuffle(optOrder);
+            optOrder.add(3);
+        }
+        else{
+            Collections.shuffle(optOrder);
+        }
         Button buttonA = (Button) findViewById(R.id.button22);
         Button buttonB = (Button) findViewById(R.id.button21);
         Button buttonC = (Button) findViewById(R.id.button20);
