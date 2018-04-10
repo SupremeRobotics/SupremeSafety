@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Futura-Bold";
-    src: url("assets/Futura.ttf")
+    src: url("Futura/Futura.ttf")
 }
 a:link, a:visited, a:hover, a:active {
     color: #FFFFFF; 
@@ -14,18 +14,22 @@ a:hover, a:active {
 body {
 	background-color: #ED1B24;
 }
-.center {
+.logo {
 	display: block;
     margin-left: auto;
     margin-right: auto;
-	margin-top: 10%;
-	margin-bottom: 10%;
+	margin-top: 5%;
     width: 50%;
+}
+.android {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
 }
 .download {
 	margin-left: auto;
     margin-right: auto;
-	margin-top: 20%;
 	width: 75%;
 	display: block;
 	text-transform: uppercase;
@@ -38,6 +42,14 @@ body {
     font-size: 18px;
 	font-weight: bold;
 	font-style: italic;
+}
+.slides {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 5%;
+	margin-bottom: 10%;
+	width: 40%;
 }
 .left {
 	font-family: "Futura-Bold", sans-serif;

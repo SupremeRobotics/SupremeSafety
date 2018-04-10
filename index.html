@@ -10,10 +10,17 @@
 
 <body>
 <div id="logo">
-	<img src="assets/logo.jpg" alt="Logo" class="center">
+	<img src="assets/logo.jpg" alt="Logo" class="logo">
+	<img src="assets/android.png" alt="Android" class="android">
 </div>
 	<button type="button" class="download" onclick="window.location.href='https://rebrand.ly/supremeapk'">Download The Supreme Safety App Today!</button>
-	<img src="assets/android.png" alt="Android" class="center">
+	<img class="slides" src="screenshots/Screenshot_20180408-191451.jpg">
+	<img class="slides" src="screenshots/Screenshot_20180408-191459.jpg">
+	<img class="slides" src="screenshots/Screenshot_20180408-191529.jpg">
+	<img class="slides" src="screenshots/Screenshot_20180408-191551.jpg">
+	<img class="slides" src="screenshots/Screenshot_20180408-200301.jpg">
+	<img class="slides" src="screenshots/Screenshot_20180408-191605.jpg">
+	<img class="slides" src="screenshots/Screenshot_20180408-191646.jpg">
 <div id="footer">
 <span class="left">App Developer:</span>​	
 	<span class="right">UI/UX Designer:</span>
@@ -21,5 +28,21 @@
 	<span class="left"><a href="https://github.com/javamath99">@javamath99</a></span>​	
 	<span class="right"><a href="https://github.com/lyjacky11">@lyjacky11</a></span>
 </div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 1500);
+}
+</script>
 </body>
 </html>
