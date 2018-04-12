@@ -26,25 +26,26 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:gravity="center"
-        android:text="McMaster University"
+        android:text="Hershey Centre"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="445dp"
-        android:layout_height="291dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:contentDescription="Fire Exit"
         android:fadingEdge="horizontal|vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fire_exit" />
+        app:srcCompat="@drawable/hershey" />
 
 </android.support.constraint.ConstraintLayout>
