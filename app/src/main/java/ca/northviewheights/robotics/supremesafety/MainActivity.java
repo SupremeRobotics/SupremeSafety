@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.text.method.LinkMovementMethod;
+import android.text.Html;
+import ca.northviewheights.robotics.supremesafety.BuildConfig;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -24,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
         textView3.setTypeface(typeface);
         Button buttonA = (Button) findViewById(R.id.button);
         buttonA.setTypeface(typeface);
+        TextView version = (TextView) findViewById(R.id.textView9);
+        version.setText("Version: " + BuildConfig.VERSION_NAME);
+        TextView github =(TextView)findViewById(R.id.textView13);
+        github.setClickable(true);
+        github.setMovementMethod(LinkMovementMethod.getInstance());
+        String link = "<a href='https://rebrand.ly/supreme'> Website </a>";
+        github.setText(Html.fromHtml(link));
     }
 
     /** Called when the user taps the Send button */
