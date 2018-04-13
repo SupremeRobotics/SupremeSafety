@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         buttonA.setTypeface(typeface);
         TextView version = (TextView) findViewById(R.id.textView9);
         version.setText("Version: " + BuildConfig.VERSION_NAME);
-        TextView github =(TextView)findViewById(R.id.textView13);
-        github.setClickable(true);
-        github.setMovementMethod(LinkMovementMethod.getInstance());
+        TextView website =(TextView)findViewById(R.id.textView13);
+        website.setClickable(true);
+        website.setMovementMethod(LinkMovementMethod.getInstance());
         String link = "<a href='https://rebrand.ly/supreme'> Website </a>";
-        github.setText(Html.fromHtml(link));
+        website.setText(Html.fromHtml(link));
     }
 
     /** Called when the user taps the Send button */

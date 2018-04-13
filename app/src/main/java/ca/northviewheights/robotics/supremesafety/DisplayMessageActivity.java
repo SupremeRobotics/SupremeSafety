@@ -31,6 +31,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
         buttonC.setTypeface(typeface);
         Button buttonD = (Button) findViewById(R.id.button6);
         buttonD.setTypeface(typeface);
+        Button buttonE = (Button) findViewById(R.id.button7);
+        buttonE.setTypeface(typeface);
     }
 
     public void goToActivity1 (View view){
@@ -89,6 +91,11 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
     public void goToActivity4 (View view){
         Intent intent = new Intent (this, Quiz.class);
+        startActivity(intent);
+    }
+
+    public void goToActivity5 (View view){
+        Intent intent = new Intent (this, Gallery.class);
         startActivity(intent);
     }
 }
